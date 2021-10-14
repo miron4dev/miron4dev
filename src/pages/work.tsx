@@ -2,7 +2,7 @@ import React from "react";
 import Job from "../components/Job";
 import Navbar from "../components/Navbar";
 import Typist from "../components/Typist";
-import MainLayout from "../layouts";
+import MainLayout from "../MainLayout";
 
 class WorkPage extends React.Component {
   render() {
@@ -21,60 +21,35 @@ class WorkPage extends React.Component {
               </section>
 
               <div className="container py-2">
-                <Job company="CyberCube" position="Senior Software Engineer" date="November 2019 - Ongoing">
-                  <p className="card-text">
-                    designing and building high performance, robust, scalable microservices, data processing
-                    applications, and RESTful web services specifically for the insurance industry
-                  </p>
-                </Job>
+                <Job companyName="Self-Employed" position="" from="10.2021"/>
 
-                <Job company="GrabCAD" position="Senior Software Engineer" date="March 2019 - October 2019"
-                     passed={true}>
-                  <p className="card-text">
-                    designing, developing and supporting innovative solutions for 3D printers and also for one of
-                    the largest online community of professional engineers, designers and manufacturers.
-                  </p>
-                </Job>
+                <Job companyName="CyberCube" position="Senior Software Engineer" from="11.2019" to="10.2021"
+                     achievements="designing and building high performance, robust, scalable microservices, data processing applications, and RESTful web services specifically for the insurance industry"
+                />
 
-                <Job company="Omniva" position="FullStack Engineer" date="May 2018 - February 2019"
-                     passed={true}>
-                  <ul className="card-text text-muted company-achievement-list">
-                    <li>
-                      developing business logic for the largest sorting line in the Baltic countries
-                    </li>
-                    <li>
-                      active participating in launch of a few new projects
-                    </li>
-                    <li>
-                      support and troubleshooting of Estonian sorting center
-                    </li>
-                  </ul>
-                </Job>
+                <Job companyName="GrabCAD" position="Senior Software Engineer" from="03.2019" to="10.2019"
+                     achievements="designing, developing and supporting innovative solutions for 3D printers and also for one of the largest online community of professional engineers, designers and manufacturers."
+                />
 
-                <Job company="T-Systems RUS" position="Senior Software Engineer" date="Feb 2017 - April 2018"
-                     passed={true}>
-                  <ul className="card-text text-muted company-achievement-list">
-                    <li>
-                      technical project leading an internal project for the largest telecommunications provider in
-                      Europe
-                    </li>
-                    <li>
-                      supervise the whole development cycle, from concept to delivery, including architecture, testing
-                      and so on
-                    </li>
-                    <li>
-                      prototyping, development and integration in close cooperation with Product Owner
-                    </li>
-                    <li>
-                      mentoring less experienced team members
-                    </li>
-                  </ul>
-                </Job>
+                <Job companyName="Omniva" position="FullStack Engineer" from="05.2018" to="02.2019"
+                     achievements={[
+                       "developing business logic for the largest sorting line in the Baltic countries",
+                       "active participating in launch of a few new projects",
+                       "support and troubleshooting of Estonian sorting center"
+                     ]}
+                />
 
-                <Job company="T-Systems RUS" position="Software Engineer" date="Jun 2014 - Feb 2017"
-                     passed={true}/>
-                <Job company="T-Systems RUS" position="Junior Software Engineer" date="Jun 2013 - Jun 2014"
-                     passed={true}/>
+                <Job companyName="T-Systems RUS" position="Senior Software Engineer" from="02.2017" to="04.2018"
+                     achievements={[
+                       "technical project leading an internal project for the largest telecommunications provider in Europe",
+                       "supervise the whole development cycle, from concept to delivery, including architecture, testing and so on",
+                       "prototyping, development and integration in close cooperation with Product Owner",
+                       "mentoring less experienced team members"
+                     ]}
+                />
+
+                <Job companyName="T-Systems RUS" position="Software Engineer" from="06.2014" to="02.2017"/>
+                <Job companyName="T-Systems RUS" position="Junior Software Engineer" from="06.2013" to="06.2014"/>
               </div>
             </main>
           </div>

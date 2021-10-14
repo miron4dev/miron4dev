@@ -10,7 +10,19 @@ import ContactData from "../components/ContactData";
 import Typist from "../components/Typist";
 
 import Navbar from "../components/Navbar";
-import MainLayout from "../layouts";
+import MainLayout from "../MainLayout";
+import githubLogo from "../assets/img/social/github.svg";
+import linkedinLogo from "../assets/img/social/linkedin.svg";
+import facebookLogo from "../assets/img/social/facebook.svg";
+import telegramLogo from "../assets/img/social/telegram.svg";
+import Contact from "../models/Contact";
+
+const contacts = [
+  new Contact("https://github.com/miron4dev", "Github", githubLogo),
+  new Contact("https://linkedin.com/in/miron4dev", "LinkedIn", linkedinLogo),
+  new Contact("https://facebook.com/miron4dev", "Facebook", facebookLogo),
+  new Contact("https://t.me/miron4dev", "Telegram", telegramLogo)
+];
 
 const skills = [
   new Skill("Java", javaLogo),
@@ -28,7 +40,7 @@ class IndexPage extends React.Component {
                   Java, Kotlin, Spring, React, TypeScript. Currently based in Tallinn, Estonia."
                   keywords="Evgeny, Mironenko, Evgeny Mironenko, Software Engineer,
                   Software Developer, Java, Kotlin, Typescript, React"
-                  contextRoot={true}>
+                  isRoot={true}>
         <div className="d-flex flex-column main-layout">
           <Navbar/>
           <div className="container-fluid container">
@@ -40,7 +52,7 @@ class IndexPage extends React.Component {
                   <p>Currently based in Tallinn, Estonia</p>
                 </div>
               </section>
-              <ContactData/>
+              <ContactData contacts={contacts} email="miron4dev@gmail.com"/>
               <div className="separator my-5"/>
               <h2>Tech I like to work with</h2>
               <Badges skills={skills}/>

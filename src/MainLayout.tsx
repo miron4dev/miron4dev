@@ -1,14 +1,15 @@
-import React from "react";
+import React, { ReactNode, useEffect } from "react";
 
 import { Helmet } from "react-helmet";
 
-import "../assets/styles/main.scss";
+import "./assets/styles/main.scss";
 
 interface MainLayoutProps {
   title: string;
   description: string;
   keywords: string;
-  contextRoot: boolean;
+  isRoot?: boolean;
+  children: ReactNode;
 }
 
 const openGraphMeta = [
@@ -21,7 +22,7 @@ const openGraphMeta = [
     content: "Evgeny Mironenko | Software Engineer"
   },
   {
-    property: "og:description",
+    property: "og:achievements",
     content: "Personal website by Evgeny Mironenko Senior Software Engineer. " +
       "Java, Kotlin, Spring, React, TypeScript. Currently based in Tallinn, Estonia."
   },
@@ -85,59 +86,51 @@ const schemaLd = {
   ]
 };
 
-class MainLayout extends React.Component<MainLayoutProps> {
+const MainLayout = ({ title, description, keywords, isRoot = false, children }: MainLayoutProps) => {
 
-  static defaultProps = {
-    contextRoot: false
-  };
-
-  private readonly meta: any[];
-
-  constructor(props: MainLayoutProps) {
-    super(props);
-    this.meta = [
-      {
-        charSet: "utf-8"
-      },
-      {
-        httpEquiv: "x-ua-compatible",
-        content: "ie=edge"
-      },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1, shrink-to-fit=no"
-      },
-      {
-        name: "description",
-        content: this.props.description
-      },
-      {
-        name: "keywords",
-        content: this.props.keywords
-      }
-    ];
-
-    if (props.contextRoot) {
-      this.meta = this.meta.concat(openGraphMeta, twitterMeta);
+  const meta: any[] = [
+    {
+      charSet: "utf-8"
+    },
+    {
+      httpEquiv: "x-ua-compatible",
+      content: "ie=edge"
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, shrink-to-fit=no"
+    },
+    {
+      name: "description",
+      content: description
+    },
+    {
+      name: "keywords",
+      content: keywords
     }
-  }
+  ];
 
-  render() {
-    return (
-      <div>
-        <Helmet title={this.props.title} meta={this.meta}>
-          <html lang="en"/>
+  useEffect(() => {
+    if (isRoot) {
+      meta.push(openGraphMeta);
+      meta.push(twitterMeta);
+    }
+  }, [isRoot]);
 
-          {this.props.contextRoot ? (
-            <script type="application/ld+json">
-              {JSON.stringify(schemaLd)}
-            </script>
-          ) : null}
-        </Helmet>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Helmet title={title} meta={meta}>
+        <html lang="en"/>
+
+        {isRoot && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaLd)}
+          </script>
+        )}
+      </Helmet>
+      {children}
+    </div>
+  );
+};
 
 export default MainLayout;

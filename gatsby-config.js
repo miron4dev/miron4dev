@@ -8,18 +8,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Fira Mono`,
-            variants: [`400`, `500`]
-          },
-          {
-            family: `Fira Sans`,
-            variants: [`300`, `400`, `700`]
-          },
+          `Fira Mono\:400,500`,
+          `Fira Sans\:300,400,700`,
         ],
+        display: 'swap'
       },
     },
     {

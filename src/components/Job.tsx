@@ -1,90 +1,82 @@
 import React from "react";
+import classNames from "classnames";
+import moment from "moment";
 
 interface JobProps {
-  company: string,
-  date: string,
+  companyName: string,
+  from: string,
+  to?: string,
   position: string,
-  passed?: boolean
+  achievements?: string[] | string;
 }
 
-class Job extends React.Component<JobProps, any> {
+const DATE_FORMAT_FROM = "MM.YYYY";
+const DATE_FORMAT_TO = "MMMM YYYY";
 
-  getCompanyClass = () => {
-    let className = "float-left";
-    if (this.props.passed) {
-      className += " text-muted";
-    }
-    return className;
+const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
+
+  const isPassed = to !== undefined;
+
+  const renderDate = () => {
+    const fromDate = moment(from, DATE_FORMAT_FROM).format(DATE_FORMAT_TO);
+    const toDate = to ? moment(to, DATE_FORMAT_FROM).format(DATE_FORMAT_TO) : "Ongoing";
+    return fromDate + " - " + toDate;
   };
 
-  getDateClass = () => {
-    let className = "float-right";
-    if (this.props.passed) {
-      className += " text-muted";
+  const renderJobDescription = () => {
+    if (typeof achievements === "string") {
+      return (
+        <p className={classNames("card-text", { "text-muted": isPassed })}>
+          {achievements}
+        </p>
+      );
+    } else if (achievements instanceof Array) {
+      return (
+        <ul className={classNames("card-text company-achievement-list", { "text-muted": isPassed })}>
+          {achievements.map((value, index) => <li key={index}>{value}</li>)}
+        </ul>
+      );
     }
-    return className;
   };
 
-  getPositionClass = () => {
-    let className = "card-title";
-    if (this.props.passed) {
-      className += " text-muted";
-    }
-    return className;
-  };
-
-  getBorderClass = () => {
-    if (this.props.passed) {
-      return "card border-secondary shadow";
-    }
-    return "card border-success shadow";
-  };
-
-  getBadgeClass = () => {
-    if (this.props.passed) {
-      return "badge badge-pill bg-secondary";
-    }
-    return "badge badge-pill bg-success border";
-  };
-
-  getSupportBadgeClass = () => {
-    let className = "col";
-    if (this.props.passed) {
-      className += " border-right";
-    }
-    return className;
-  };
-
-  render() {
-    return (
-      <div className="row">
-        <div className="col-auto text-center flex-column d-none d-sm-flex">
-          <div className="row h-50">
-            <div className={this.getSupportBadgeClass()}>&nbsp;</div>
-            <div className="col">&nbsp;</div>
-          </div>
-          <h5 className="m-2">
-            <span className={this.getBadgeClass()}>&nbsp;</span>
-          </h5>
-          <div className="row h-50">
-            <div className="col border-right">&nbsp;</div>
-            <div className="col">&nbsp;</div>
-          </div>
+  return (
+    <div className="job-description row">
+      <div className="col-auto text-center flex-column d-none d-sm-flex">
+        <div className="row h-50">
+          <div className={classNames("col", { "border-right": isPassed })}>&nbsp;</div>
+          <div className="col">&nbsp;</div>
         </div>
-        <div className="col py-2">
-          <div className={this.getBorderClass()}>
-            <div className="card-body">
-              <div className={this.getCompanyClass() + " company-name"}>{this.props.company}</div>
-              <div className={this.getDateClass() + " company-name"}>{this.props.date}</div>
-              <h2 className={this.getPositionClass()}>{this.props.position}</h2>
-
-              {this.props.children}
+        <h5 className="m-2">
+            <span
+              className={classNames("badge", "badge-pill", isPassed ? "bg-secondary" : "bg-success border")}>
+              &nbsp;
+            </span>
+        </h5>
+        <div className="row h-50">
+          <div className="col border-right">&nbsp;</div>
+          <div className="col">&nbsp;</div>
+        </div>
+      </div>
+      <div className="col py-2">
+        <div
+          className={classNames("card", "shadow", isPassed ? "border-secondary" : "border-success")}>
+          <div className="card-body">
+            <div className={classNames("float-left", "company-header", { "text-muted": isPassed })}>
+              {companyName}
             </div>
+            <div className={classNames("float-right", "company-header", { "text-muted": isPassed })}>
+              {renderDate()}
+            </div>
+            <h2 className={classNames("card-title", { "text-muted": isPassed })}>
+              {position}
+            </h2>
+
+            {renderJobDescription()}
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Job;

@@ -17,7 +17,7 @@
       false
     ],
     "ordered-imports": [
-      true
+      false
     ],
     "no-console": [
       false
