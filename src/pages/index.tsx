@@ -37,7 +37,7 @@ class IndexPage extends React.Component {
     return (
       <MainLayout title="Evgeny Mironenko | Software Engineer"
                   description="Personal website by Evgeny Mironenko Senior Software Engineer.
-                  Java, Kotlin, Spring, React, TypeScript. Currently based in Tallinn, Estonia."
+                  Java, Kotlin, Spring, React, TypeScript. Currently based in Amsterdam, Netherlands."
                   keywords="Evgeny, Mironenko, Evgeny Mironenko, Software Engineer,
                   Software Developer, Java, Kotlin, Typescript, React"
                   isRoot={true}>
@@ -49,7 +49,7 @@ class IndexPage extends React.Component {
                 <div>
                   <h1><Typist messages={["Evgeny Mironenko"]}/></h1>
                   <p className="lead">Software Engineer & Proud Geek</p>
-                  <p>Currently based in Tallinn, Estonia</p>
+                  <p>Currently based in Amsterdam, Netherlands</p>
                 </div>
               </section>
               <ContactData contacts={contacts} email="miron4dev@gmail.com"/>
