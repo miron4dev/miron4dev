@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig  = {
   siteMetadata: {
     title: `Evgeny Mironenko | Software Engineer`,
     siteUrl: `https://miron4dev.com`
@@ -43,7 +45,7 @@ module.exports = {
         trackingId: "UA-138655376-1"
       }
     },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-tslint`
   ]
 };
+
+export default config;
