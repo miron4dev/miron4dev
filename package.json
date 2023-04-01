@@ -8,8 +8,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "clean": "gatsby clean",
-    "": "gatsby develop"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
