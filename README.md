@@ -17,8 +17,8 @@
 
 ## 🏆 Achievements & Certifications
 
-- [Certified Professional - Java SE 6 Programmer 1Z0-808] - Oracle, 2013
-- [Certified Expert - EE 6 Web Component Developer Certified Expert 1Z0-899] - Oracle, 2014
+- Oracle Certified Professional - Java SE 6 Programmer 1Z0-808, 2013
+- Oracle Certified Expert - Java EE 6 Web Component Developer Certified Expert 1Z0-899, 2014
 
 ## 📫 How to reach me
 
