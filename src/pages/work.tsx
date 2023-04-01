@@ -5,58 +5,77 @@ import Typist from "../components/Typist";
 import MainLayout from "../MainLayout";
 
 class WorkPage extends React.Component {
-  render() {
-    return (
-      <MainLayout title="Evgeny Mironenko | Working Experience"
-                  description="Working Experience of Senior Software Engineer Evgeny Mironenko"
-                  keywords="working experience, timeline, cv, jobs description">
-        <div className="d-flex flex-column main-layout">
-          <Navbar/>
-          <div className="container-fluid container">
-            <main>
-              <section className="py-3 py-md-4">
-                <div className="d-flex align-items-end typist">
-                  <h1><Typist messages={["My experience"]}/></h1>
+    render() {
+        return (
+            <MainLayout title="Evgeny Mironenko | Working Experience"
+                        description="Working Experience of Senior Software Engineer Evgeny Mironenko"
+                        keywords="working experience, timeline, cv, jobs description">
+                <div className="d-flex flex-column main-layout">
+                    <Navbar/>
+                    <div className="container-fluid container">
+                        <main>
+                            <section className="py-3 py-md-4">
+                                <div className="d-flex align-items-end typist">
+                                    <h1><Typist messages={["My experience"]}/></h1>
+                                </div>
+                            </section>
+
+                            <div className="container py-2">
+                                <Job companyName="Miro" position="Software Engineer L5" from="10.2021"
+                                     achievements={[
+                                         "Collaborated with top-tier Miro partners such as Google, Zoom, Microsoft, and Slack to architect, develop, and launch new projects and improve existing ones such as Google Meet Integration, Calendar Addon, etc.",
+                                         "Pioneered proof-of-concept projects to enhance user experience, resulting in a 70% increase in user retention.",
+                                         "Introduced frontend observability across the company’s integrations for peak performance monitoring and visibility.",
+                                         "Led the migration to GitHub for the team’s projects, optimizing CI/CD processes and implementing continuous deployment to expedite release cycles.",
+                                         "Established an SLA for the team, incorporating automated duty rotations and enhancing alerting mechanisms for increased operational efficiency."
+                                     ]}/>
+
+                                <Job companyName="CyberCube" position="Senior Software Engineer" from="11.2019"
+                                     to="10.2021"
+                                     achievements={[
+                                         "Spearheaded the design, development, and delivery of high-performance serverless solutions using AWS, GraalVM, and Kotlin, reducing costs and improving efficiency for cyber-security risk calculations.",
+                                         "Led the migration of a crucial frontend component from AngularJS to React, resulting in a significant improvement in performance and maintainability.",
+                                         "Introduced the concept of micro-frontend architecture, resulting in better team collaboration, faster development cycles, and improved scalability for the company’s frontend ecosystem."
+                                     ]}
+                                />
+
+                                <Job companyName="GrabCAD" position="Senior Software Engineer" from="03.2019"
+                                     to="10.2019"
+                                     achievements={[
+                                         "Led the development and successful delivery of a 3D-model viewer for GrabCAD, one of the largest online communities of CAD experts."
+                                     ]}
+                                />
+
+                                <Job companyName="Omniva" position="FullStack Engineer" from="05.2018" to="02.2019"
+                                     achievements={[
+                                         "Played a key role in the successful launch of several new projects, notably including the largest sorting line in\n" +
+                                         "the Baltic countries.",
+                                         "Troubleshot issues with logistics and sorting modules, rapidly identifying and resolving problems to minimize\n" +
+                                         "downtime and ensure smooth operations."
+                                     ]}
+                                />
+
+                                <Job companyName="T-Systems RUS" position="Senior Software Engineer" from="02.2017"
+                                     to="04.2018"
+                                     achievements={[
+                                         "Led technical project for Deutsche Telekom, managing all aspects of the development cycle, from ideation to\n" +
+                                         "delivery, including architecture design, testing, and deployment.",
+                                         "Collaborated with stakeholders to prototype, develop, and integrate solutions, ensuring project objectives were\n" +
+                                         "met on time and within budget.",
+                                         "Mentored junior team members to enhance their technical skills and ensure their professional growth within the organization.",
+                                         "Utilized strong communication skills to effectively coordinate with cross-functional teams and senior management to drive project success."
+                                     ]}
+                                />
+
+                                <Job companyName="T-Systems RUS" position="Software Engineer" from="06.2013"
+                                     to="02.2017"/>
+                            </div>
+                        </main>
+                    </div>
                 </div>
-              </section>
-
-              <div className="container py-2">
-                <Job companyName="Self-Employed" position="" from="10.2021"/>
-
-                <Job companyName="CyberCube" position="Senior Software Engineer" from="11.2019" to="10.2021"
-                     achievements="designing and building high performance, robust, scalable microservices, data processing applications, and RESTful web services specifically for the insurance industry"
-                />
-
-                <Job companyName="GrabCAD" position="Senior Software Engineer" from="03.2019" to="10.2019"
-                     achievements="designing, developing and supporting innovative solutions for 3D printers and also for one of the largest online community of professional engineers, designers and manufacturers."
-                />
-
-                <Job companyName="Omniva" position="FullStack Engineer" from="05.2018" to="02.2019"
-                     achievements={[
-                       "developing business logic for the largest sorting line in the Baltic countries",
-                       "active participating in launch of a few new projects",
-                       "support and troubleshooting of Estonian sorting center"
-                     ]}
-                />
-
-                <Job companyName="T-Systems RUS" position="Senior Software Engineer" from="02.2017" to="04.2018"
-                     achievements={[
-                       "technical project leading an internal project for the largest telecommunications provider in Europe",
-                       "supervise the whole development cycle, from concept to delivery, including architecture, testing and so on",
-                       "prototyping, development and integration in close cooperation with Product Owner",
-                       "mentoring less experienced team members"
-                     ]}
-                />
-
-                <Job companyName="T-Systems RUS" position="Software Engineer" from="06.2014" to="02.2017"/>
-                <Job companyName="T-Systems RUS" position="Junior Software Engineer" from="06.2013" to="06.2014"/>
-              </div>
-            </main>
-          </div>
-        </div>
-      </MainLayout>
-    );
-  }
+            </MainLayout>
+        );
+    }
 }
 
 export default WorkPage;
