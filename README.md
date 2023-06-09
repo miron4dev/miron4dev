@@ -1,7 +1,5 @@
 # Hi there, I'm Evgeny! 👋
 
-![Header Image ](./static/header.jpg)
-
 ## 🌟 About Me
 
 - 🎓 I'm a Software Engineer with over 10 years of experience in designing and developing complex and scalable software applications.
