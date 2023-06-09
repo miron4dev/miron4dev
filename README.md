@@ -22,4 +22,3 @@
 
 - [LinkedIn](https://www.linkedin.com/in/miron4dev/)
 - [Telegram](https://t.me/miron4dev)
-- [Personal Website](https://miron4dev.com)
