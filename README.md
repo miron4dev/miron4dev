@@ -1,7 +1,5 @@
 # Hi there, I'm Evgeny! 👋
 
-![Header Image ](./static/header.jpg)
-
 ## 🌟 About Me
 
 - 🎓 I'm a Software Engineer with over 10 years of experience in designing and developing complex and scalable software applications.
@@ -24,4 +22,3 @@
 
 - [LinkedIn](https://www.linkedin.com/in/miron4dev/)
 - [Telegram](https://t.me/miron4dev)
-- [Personal Website](https://miron4dev.com)
