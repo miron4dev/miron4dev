@@ -21,4 +21,3 @@
 ## 📫 How to reach me
 
 - [LinkedIn](https://www.linkedin.com/in/miron4dev/)
-- [Telegram](https://t.me/miron4dev)
