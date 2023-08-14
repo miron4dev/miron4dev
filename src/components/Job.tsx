@@ -60,7 +60,7 @@ const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
       <div className="col py-2">
         <div
           className={classNames("card", "shadow", isPassed ? "border-secondary" : "border-success")}>
-          <div className="card-body">
+          <div className="card-header">
             <div className={classNames("float-left", "company-header", { "text-muted": isPassed })}>
               {companyName}
             </div>
@@ -70,7 +70,9 @@ const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
             <h2 className={classNames("card-title", { "text-muted": isPassed })}>
               {position}
             </h2>
+          </div>
 
+          <div className="card-body">
             {renderJobDescription()}
           </div>
         </div>

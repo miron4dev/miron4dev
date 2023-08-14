@@ -21,13 +21,15 @@ class WorkPage extends React.Component {
                             </section>
 
                             <div className="container py-2">
-                                <Job companyName="Miro" position="Software Engineer L5" from="10.2021"
+                                <Job companyName="Miro" position="Senior Software Engineer" from="10.2021"
                                      achievements={[
-                                         "Collaborated with top-tier Miro partners such as Google, Zoom, Microsoft, and Slack to architect, develop, and launch new projects and improve existing ones such as Google Meet Integration, Calendar Addon, etc.",
+                                         "Collaborated with top-tier Miro partners such as Google, Zoom, Microsoft, and Slack to architect, develop, and launch new projects and improve existing ones.",
                                          "Pioneered proof-of-concept projects to enhance user experience, resulting in a 70% increase in user retention.",
                                          "Introduced frontend observability across the company’s integrations for peak performance monitoring and visibility.",
                                          "Led the migration to GitHub for the team’s projects, optimizing CI/CD processes and implementing continuous deployment to expedite release cycles.",
-                                         "Established an SLA for the team, incorporating automated duty rotations and enhancing alerting mechanisms for increased operational efficiency."
+                                         "Established an SLA for both the team and the company's stream, successfully incorporating on-call rotations and enhancing alerting mechanisms for high operational efficiency.",
+                                         "Led the BE live coding interviewers guild within the company by improving and overseeing the interview process, creating a comprehensive candidate competency rubric, and maintaining the high quality of interview questions.",
+                                         "Promoted to Senior Software Engineer in May 2023."
                                      ]}/>
 
                                 <Job companyName="CyberCube" position="Senior Software Engineer" from="11.2019"
@@ -35,7 +37,7 @@ class WorkPage extends React.Component {
                                      achievements={[
                                          "Spearheaded the design, development, and delivery of high-performance serverless solutions using AWS, GraalVM, and Kotlin, reducing costs and improving efficiency for cyber-security risk calculations.",
                                          "Led the migration of a crucial frontend component from AngularJS to React, resulting in a significant improvement in performance and maintainability.",
-                                         "Introduced the concept of micro-frontend architecture, resulting in better team collaboration, faster development cycles, and improved scalability for the company’s frontend ecosystem."
+                                         "Introduced the concept of micro-frontend architecture across the company's projects, resulting in better team collaboration, faster development cycles, and improved scalability for the company’s frontend ecosystem."
                                      ]}
                                 />
 
@@ -55,7 +57,7 @@ class WorkPage extends React.Component {
                                      ]}
                                 />
 
-                                <Job companyName="T-Systems RUS" position="Senior Software Engineer" from="02.2017"
+                                <Job companyName="T-Systems RUS" position="Senior Software Engineer" from="06.2013"
                                      to="04.2018"
                                      achievements={[
                                          "Led technical project for Deutsche Telekom, managing all aspects of the development cycle, from ideation to\n" +
@@ -63,12 +65,10 @@ class WorkPage extends React.Component {
                                          "Collaborated with stakeholders to prototype, develop, and integrate solutions, ensuring project objectives were\n" +
                                          "met on time and within budget.",
                                          "Mentored junior team members to enhance their technical skills and ensure their professional growth within the organization.",
-                                         "Utilized strong communication skills to effectively coordinate with cross-functional teams and senior management to drive project success."
+                                         "Utilized strong communication skills to effectively coordinate with cross-functional teams and senior management to drive project success.",
+                                         "Promoted to Senior Software Engineer in Feb 2017."
                                      ]}
                                 />
-
-                                <Job companyName="T-Systems RUS" position="Software Engineer" from="06.2013"
-                                     to="02.2017"/>
                             </div>
                         </main>
                     </div>

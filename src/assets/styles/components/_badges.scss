@@ -1,7 +1,6 @@
 .badge {
   font-weight: 500;
   padding: 0.5rem 0.8rem;
-  margin: 0 0.5rem 0.5rem 0;
 }
 
 .badges-pnl {
@@ -13,12 +12,28 @@
   }
 }
 
+.badge-pill {
+  border-radius: 10rem;
+}
+
 .card {
   background-color: unset;
 }
 
 .card-title {
-  color: #C5A483
+  color: #C5A483;
+
+  .text-muted {
+    color: #6c757d;
+  }
+}
+
+.card-body {
+  color: #b6b6b6;
+
+  .text-muted {
+    color: #6c757d !important;
+  }
 }
 
 .border {
