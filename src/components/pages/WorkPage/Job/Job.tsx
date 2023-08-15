@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import moment from "moment";
-import { Card, ListGroup } from "react-bootstrap";
+import { Badge, Card, ListGroup } from "react-bootstrap";
 import * as styles from "./Job.module.less";
 
 interface JobProps {
@@ -33,10 +33,7 @@ const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
           <div className="col">&nbsp;</div>
         </div>
         <h5 className="m-2">
-              <span
-                className={classNames("badge", styles.badgePill, isPassed ? "bg-secondary" : "bg-success")}>
-                &nbsp;
-              </span>
+          <Badge pill bg={isPassed ? "secondary" : "success"} className={styles.badge}>&nbsp;</Badge>
         </h5>
         <div className="row h-50">
           <div className={`col ${styles.borderRight}`}>&nbsp;</div>

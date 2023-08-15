@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import "./theme.less";
+import "../../theme.less";
 
 interface MainLayoutProps {
   title: string;

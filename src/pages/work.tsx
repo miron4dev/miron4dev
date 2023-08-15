@@ -1,2 +1,2 @@
-import WorkPage from "./WorkPage/WorkPage";
+import WorkPage from "../components/pages/WorkPage/WorkPage";
 export default WorkPage;

@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@common": path.resolve(__dirname, "src/common"),
+          "@common": path.resolve(__dirname, "src/components/common"),
           "@models": path.resolve(__dirname, "src/models"),
           "@assets": path.resolve(__dirname, "src/assets"),
         },

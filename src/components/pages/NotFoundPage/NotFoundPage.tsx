@@ -1,6 +1,6 @@
 import React from "react";
 import TreeView from "react-typist";
-import MainLayout from "../../MainLayout";
+import MainLayout from "../MainLayout";
 import * as styles from "./NotFoundPage.module.less"
 
 const NotFoundPage = () => {

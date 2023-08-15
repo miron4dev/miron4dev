@@ -1,4 +1,4 @@
-.brand-wrapper > span > a {
+.brandWrapper > span > a {
   text-transform: uppercase;
   letter-spacing: .06em;
   -webkit-transform: translateZ(0);
@@ -13,50 +13,46 @@
 }
 
 @media (min-width: 768px) {
-  .brand-wrapper > span > a {
+  .brandWrapper > span > a {
     font-size: 28px
   }
 }
 
-.brand-wrapper > span > a:hover {
+.brandWrapper > span > a:hover {
   background: none
 }
 
 @media (hover: hover) {
-  .brand-wrapper > span > a {
+  .brandWrapper > span > a {
     transition: all 175ms cubic-bezier(.4, 0, .2, 1);
     padding: 0;
     letter-spacing: .025em;
   }
 
-  .brand-wrapper > span > a > span {
+  .brandWrapper > span > a > span {
     transition: all 175ms cubic-bezier(.4, 0, .2, 1), opacity 125ms cubic-bezier(.4, 0, .2, 1);
     font-size: 0;
     opacity: 0;
   }
 
-  .brand-wrapper > span > a:hover > span {
+  .brandWrapper > span > a:hover > span {
     opacity: 1;
     font-size: 1em
   }
 }
 
 
-.brand-wrapper > span > a > span {
+.brandWrapper > span > a > span {
   transition: all 175ms cubic-bezier(.4, 0, .2, 1), opacity 125ms cubic-bezier(.4, 0, .2, 1);
   font-size: 0;
   opacity: 0;
 }
 
-.brand-wrapper > span > a > span:hover:after {
+.brandWrapper > span > a > span:hover:after {
   font-size: 24px;
   opacity: 100%;
 }
 
-.navbar-collapse {
-  flex-grow: 0;
-}
-
-.nav-wrapper > a {
+.navWrapper > a {
   margin-left: 1rem;
 }
