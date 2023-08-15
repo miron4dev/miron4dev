@@ -1,8 +1,7 @@
 import React, { ReactNode, useEffect } from "react";
-
 import { Helmet } from "react-helmet";
 
-import "./assets/styles/main.scss";
+import "./theme.less";
 
 interface MainLayoutProps {
   title: string;
@@ -120,7 +119,7 @@ const MainLayout = ({ title, description, keywords, isRoot = false, children }: 
   return (
     <div>
       <Helmet title={title} meta={meta}>
-        <html lang="en"/>
+        <html lang="en" />
 
         {isRoot && (
           <script type="application/ld+json">

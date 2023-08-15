@@ -1,13 +1,4 @@
-nav ul li {
-  margin-left: 1rem;
-}
-
-header {
-  align-items: center;
-  display: inline-flex;
-}
-
-.header > span > .logo {
+.brand-wrapper > span > a {
   text-transform: uppercase;
   letter-spacing: .06em;
   -webkit-transform: translateZ(0);
@@ -22,46 +13,50 @@ header {
 }
 
 @media (min-width: 768px) {
-  .header > span > .logo {
+  .brand-wrapper > span > a {
     font-size: 28px
   }
 }
 
-.header > span > .logo:hover {
+.brand-wrapper > span > a:hover {
   background: none
 }
 
 @media (hover: hover) {
-  .header > span > .logo {
+  .brand-wrapper > span > a {
     transition: all 175ms cubic-bezier(.4, 0, .2, 1);
     padding: 0;
     letter-spacing: .025em;
   }
 
-  .header > span > .logo > span {
+  .brand-wrapper > span > a > span {
     transition: all 175ms cubic-bezier(.4, 0, .2, 1), opacity 125ms cubic-bezier(.4, 0, .2, 1);
     font-size: 0;
     opacity: 0;
   }
 
-  .header > span > .logo:hover > span {
+  .brand-wrapper > span > a:hover > span {
     opacity: 1;
     font-size: 1em
   }
 }
 
 
-.header > span > .logo > span {
+.brand-wrapper > span > a > span {
   transition: all 175ms cubic-bezier(.4, 0, .2, 1), opacity 125ms cubic-bezier(.4, 0, .2, 1);
   font-size: 0;
   opacity: 0;
 }
 
-.header > span > .logo > span:hover:after {
+.brand-wrapper > span > a > span:hover:after {
   font-size: 24px;
   opacity: 100%;
 }
 
-.mr-auto {
-  margin-right: auto;
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.nav-wrapper > a {
+  margin-left: 1rem;
 }

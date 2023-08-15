@@ -1,4 +1,7 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
+  background: #2f2f2f;
   font-family: 'Fira Mono', monospace;
   color: #b6b6b6;
   text-align: center;
@@ -45,4 +48,21 @@ a {
 a:hover {
   color: #669bf9 !important;
   text-decoration: none;
+}
+
+
+// TODO
+
+//@include media-breakpoint-up(md) {
+//  .container-fluid {
+//    padding: 0 32px;
+//  }
+//}
+
+.main-layout {
+  min-height: 100vh;
+
+  .container {
+    flex: 1
+  }
 }
