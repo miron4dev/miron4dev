@@ -1,23 +1,38 @@
 import type { GatsbyConfig } from "gatsby";
 
-const config: GatsbyConfig  = {
+const path = require("path");
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Evgeny Mironenko | Software Engineer`,
     siteUrl: `https://miron4dev.com`
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    `gatsby-plugin-less`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@common": path.resolve(__dirname, "src/components/common"),
+          "@models": path.resolve(__dirname, "src/models"),
+          "@assets": path.resolve(__dirname, "src/assets"),
+        },
+        extensions: [
+          "ts", "tsx", "svg"
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           `Fira Mono\:400,500`,
-          `Fira Sans\:300,400,700`,
+          `Fira Sans\:300,400,700`
         ],
-        display: 'swap'
-      },
+        display: "swap"
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -44,7 +59,7 @@ const config: GatsbyConfig  = {
       options: {
         trackingId: "UA-138655376-1"
       }
-    },
+    }
   ]
 };
 

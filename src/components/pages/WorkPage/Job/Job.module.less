@@ -1,0 +1,76 @@
+.jobsWrapper {
+  display: flex;
+}
+
+.cardWrapper() {
+  margin: 1.25rem;
+  flex-basis: 0;
+  flex-grow: 1;
+  background-color: unset;
+}
+
+.cardWrapperCurrent {
+  .cardWrapper;
+  border-color: rgba(var(--bs-success-rgb), 1);
+
+  .cardHeader {
+    color: #C5A483;
+    border-color: rgba(var(--bs-success-rgb), 0.5);
+
+    span {
+      color: #9cb456;
+    }
+  }
+
+  .jobAchievement {
+    color: #b6b6b6;
+  }
+}
+
+.cardWrapperPast {
+  .cardWrapper;
+  border-color: rgba(var(--bs-secondary-rgb), 1);
+
+  .cardHeader {
+    color: #6c757d;
+    border-color: rgba(var(--bs-secondary-rgb), 0.5);
+
+    span {
+      color: #6c757d;
+    }
+  }
+
+  .jobAchievement {
+    color: #6c757d;
+  }
+}
+
+.cardHeader {
+  float: left;
+
+  span {
+    float: right;
+  }
+}
+
+.cardBody {
+  padding-left: 40px;
+}
+
+.jobAchievement {
+  background-color: unset;
+  text-align: left;
+  display: list-item;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.borderRight {
+  border-right: 1px solid #dee2e6;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+}

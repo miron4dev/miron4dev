@@ -11,7 +11,19 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": [
+        "src/components/common/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    }
   },
   "include": [
     "./src/**/*",

@@ -1,0 +1,15 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "bracketSameLine": true,
+  "arrowParens": "avoid",
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrder": [
+    "^[^./]+$",
+    "^@",
+    "^[^.]",
+    "^."
+  ],
+  "printWidth": 120
+}
