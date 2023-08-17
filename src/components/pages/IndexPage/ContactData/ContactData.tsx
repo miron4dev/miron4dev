@@ -5,7 +5,7 @@ import * as styles from "./ContactData.module.less";
 type ContactData = {
   contacts: Contact[];
   email: string;
-}
+};
 
 const ContactData = ({ contacts, email }: ContactData) => (
   <div>
@@ -13,8 +13,7 @@ const ContactData = ({ contacts, email }: ContactData) => (
       <ul>
         {contacts.map(it => (
           <li key={it.name} className={styles.contact}>
-            <a target="_blank" href={it.url}
-               rel="noopener noreferrer" title={`Open ${it.name} Profile`}>
+            <a target="_blank" href={it.url} rel="noopener noreferrer" title={`Open ${it.name} Profile`}>
               <img src={it.logo} alt={it.name} height="24" />
             </a>
           </li>

@@ -3,7 +3,8 @@
   "tabWidth": 2,
   "bracketSameLine": true,
   "arrowParens": "avoid",
-  "importOrderSeparation": false,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
   "importOrder": [
     "^[^./]+$",
     "^@",

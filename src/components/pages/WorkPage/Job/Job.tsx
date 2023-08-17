@@ -5,10 +5,10 @@ import { Badge, Card, ListGroup } from "react-bootstrap";
 import * as styles from "./Job.module.less";
 
 interface JobProps {
-  companyName: string,
-  from: string,
-  to?: string,
-  position: string,
+  companyName: string;
+  from: string;
+  to?: string;
+  position: string;
   achievements?: string[] | string;
 }
 
@@ -16,7 +16,6 @@ const DATE_FORMAT_FROM = "MM.YYYY";
 const DATE_FORMAT_TO = "MMMM YYYY";
 
 const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
-
   const isPassed = to !== undefined;
 
   const renderDate = () => {
@@ -33,7 +32,9 @@ const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
           <div className="col">&nbsp;</div>
         </div>
         <h5 className="m-2">
-          <Badge pill bg={isPassed ? "secondary" : "success"} className={styles.badge}>&nbsp;</Badge>
+          <Badge pill bg={isPassed ? "secondary" : "success"} className={styles.badge}>
+            &nbsp;
+          </Badge>
         </h5>
         <div className="row h-50">
           <div className={`col ${styles.borderRight}`}>&nbsp;</div>
@@ -46,11 +47,11 @@ const Job = ({ companyName, from, to, position, achievements }: JobProps) => {
         </Card.Header>
         <Card.Body className={styles.cardBody}>
           <ListGroup>
-            {achievements.map((value, index) =>
+            {achievements.map((value, index) => (
               <ListGroup.Item key={index} className={styles.jobAchievement}>
                 {value}
               </ListGroup.Item>
-            )}
+            ))}
           </ListGroup>
         </Card.Body>
       </Card>
