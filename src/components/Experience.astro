@@ -8,8 +8,8 @@ const jobs = [
     current: true,
     highlights: [
       'Led cross-functional initiatives to build a company-wide software catalog, establishing clear service ownership for 70+ engineering teams — enabling automations in QA, Security, DevEx and Incident Management.',
-      'Designed and led the implementation of a company-wide internal knowledge assistant using GraphRAG, unifying fragmented data and improving knowledge discovery across engineering, PM, support and leadership.',
-      'Implemented an AI-powered triage system using LLMs to automatically classify bug reports and feature requests and route them to the right team.',
+      'Designed and led the implementation of a company brain using GraphRAG, unifying fragmented data and improving knowledge discovery across engineering, PM, support and leadership.',
+      'Implemented an <a href="https://aws.amazon.com/de/blogs/machine-learning/how-miro-uses-amazon-bedrock-to-boost-software-bug-routing-accuracy-and-improve-time-to-resolution-from-days-to-hours/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 500;">AI-powered triage system</a> using LLMs to automatically classify bug reports and feature requests and route them to the right team.',
       'Established a 24/7 on-call process for 7 teams, enabling continuous support and improving operational stability of the Miro platform.',
       'Partnered with Google, Microsoft, Zoom and Slack, contributing to integrations that grew weekly active users by over 200K.',
       'Spoke as a technical speaker at the Google Workspace Developer Summit in Amsterdam; represented Miro as a featured partner at Microsoft Build in Seattle.',
@@ -85,7 +85,7 @@ const jobs = [
             </div>
           </div>
           <ul class="job-highlights">
-            {highlights.map((h) => <li>{h}</li>)}
+            {highlights.map((h) => <li set:html={h}></li>)}
           </ul>
         </article>
       ))}
