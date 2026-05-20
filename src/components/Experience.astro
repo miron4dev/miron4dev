@@ -1,0 +1,203 @@
+---
+const jobs = [
+  {
+    company: 'Miro',
+    role: 'Staff Software Engineer',
+    period: 'Oct 2021 — Present',
+    location: 'Amsterdam, Netherlands',
+    current: true,
+    highlights: [
+      'Led cross-functional initiatives to build a company-wide software catalog, establishing clear service ownership for 70+ engineering teams — enabling automations in QA, Security, DevEx and Incident Management.',
+      'Designed and led the implementation of a company-wide internal knowledge assistant using GraphRAG, unifying fragmented data and improving knowledge discovery across engineering, PM, support and leadership.',
+      'Implemented an AI-powered triage system using LLMs to automatically classify bug reports and feature requests and route them to the right team.',
+      'Established a 24/7 on-call process for 7 teams, enabling continuous support and improving operational stability of the Miro platform.',
+      'Partnered with Google, Microsoft, Zoom and Slack, contributing to integrations that grew weekly active users by over 200K.',
+      'Spoke as a technical speaker at the Google Workspace Developer Summit in Amsterdam; represented Miro as a featured partner at Microsoft Build in Seattle.',
+      'Mentored engineers and provided technical guidance across multiple teams.',
+      'Promoted to Staff Software Engineer in July 2025.',
+    ],
+  },
+  {
+    company: 'CyberCube',
+    role: 'Senior Software Engineer',
+    period: 'Nov 2019 — Oct 2021',
+    location: 'Tallinn, Estonia',
+    highlights: [
+      'Designed and delivered high-performance serverless solutions with AWS, GraalVM and Kotlin, reducing costs and improving efficiency for cybersecurity risk modelling.',
+      'Led the migration of the core frontend from AngularJS to React, significantly improving performance and maintainability.',
+      'Introduced micro-frontend architecture company-wide, accelerating feature delivery and enabling team autonomy.',
+    ],
+  },
+  {
+    company: 'GrabCAD',
+    role: 'Senior Software Engineer',
+    period: 'Mar 2019 — Oct 2019',
+    location: 'Tallinn, Estonia',
+    highlights: [
+      'Led the development and launch of a high-performance web-based 3D model viewer for GrabCAD\'s global engineering community, enabling seamless visualisation of complex CAD models.',
+    ],
+  },
+  {
+    company: 'Omniva',
+    role: 'Full Stack Software Engineer',
+    period: 'May 2018 — Mar 2019',
+    location: 'Tallinn, Estonia',
+    highlights: [
+      'Built and deployed large-scale logistics systems, including the largest automated sorting line in the Baltic countries, using Java and microservices architecture.',
+      'Diagnosed and resolved critical issues in logistics and sorting systems, minimising downtime and keeping day-to-day operations running smoothly.',
+    ],
+  },
+  {
+    company: 'T-Systems',
+    role: 'Senior Software Engineer',
+    period: 'Jun 2013 — Apr 2018',
+    location: 'St. Petersburg, Russia',
+    highlights: [
+      'Led end-to-end delivery of enterprise solutions for Deutsche Telekom, covering architecture, development, testing and deployment.',
+      'Coordinated with stakeholders to prototype and integrate systems, consistently shipping on time and within budget.',
+      'Facilitated communication across engineering, QA and management teams to keep complex projects on track.',
+      'Mentored junior engineers and supported their onboarding and growth. Promoted to Senior Software Engineer in Feb 2017.',
+    ],
+  },
+];
+---
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">// experience</span>
+      <h2 class="section-title">Where I've worked</h2>
+    </div>
+
+    <div class="jobs-grid stagger">
+      {jobs.map(({ company, role, period, location, current, highlights }, i) => (
+        <article class="card job-card fade-up" style={`--i: ${i}`}>
+          <div class="job-top">
+            <div class="job-meta">
+              <div class="job-company-row">
+                <h3 class="job-company">{company}</h3>
+                {current && <span class="current-badge"><span class="live-dot" aria-hidden="true"></span>Now</span>}
+              </div>
+              <p class="job-role">{role}</p>
+            </div>
+            <div class="job-time">
+              <p class="job-period mono">{period}</p>
+              <p class="job-location mono">{location}</p>
+            </div>
+          </div>
+          <ul class="job-highlights">
+            {highlights.map((h) => <li>{h}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #experience { background: transparent; }
+  .section-header { margin-bottom: 3rem; }
+
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .jobs-grid .job-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .job-card { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .job-company-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-company {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .current-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--teal);
+    background: var(--teal-dim);
+    border: 1px solid var(--teal-border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse-dot 2s ease infinite;
+    flex-shrink: 0;
+  }
+
+  .job-role {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--teal);
+    margin: 0;
+  }
+
+  .job-time { text-align: right; flex-shrink: 0; }
+  .job-period {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .job-location {
+    font-size: 0.68rem;
+    color: var(--text-faint);
+    margin: 0.15rem 0 0;
+  }
+
+  .job-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0; padding: 0;
+  }
+  .job-highlights li {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .job-highlights li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .jobs-grid { grid-template-columns: 1fr; }
+    .jobs-grid .job-card:first-child { grid-column: auto; }
+    .job-time { text-align: left; }
+  }
+</style>

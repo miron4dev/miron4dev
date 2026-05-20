@@ -1,0 +1,148 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Evgeny Mironenko — Independent Software Consultant',
+  description = 'Independent software consultant based in Amsterdam, Netherlands. Specialising in AI/LLM integration, GraphRAG knowledge systems, large-scale distributed architectures, and technical leadership.',
+  canonical = 'https://miron4dev.com/',
+  ogImage = 'https://miron4dev.com/me.jpg',
+} = Astro.props;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Evgeny Mironenko',
+  url: 'https://miron4dev.com',
+  jobTitle: 'Independent Software Consultant',
+  description,
+  email: 'mailto:miron4dev@gmail.com',
+  image: ogImage,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Amsterdam',
+    addressCountry: 'NL',
+  },
+  knowsAbout: [
+    'GraphRAG',
+    'LLM Integration',
+    'Knowledge Graphs',
+    'Retrieval-Augmented Generation',
+    'Neo4j',
+    'LangChain',
+    'Large-Scale Distributed Systems',
+    'Microservices Architecture',
+    'Technical Leadership',
+    'Java',
+    'Kotlin',
+    'Python',
+    'TypeScript',
+    'AWS',
+    'Spring Boot',
+    'MCP Protocol',
+  ],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Herzen University',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/miron4dev',
+    'https://github.com/miron4dev',
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Evgeny Mironenko — Independent Software Consultant',
+  url: 'https://miron4dev.com',
+  founder: { '@type': 'Person', name: 'Evgeny Mironenko' },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Netherlands',
+  },
+  serviceType: [
+    'AI/LLM Integration',
+    'GraphRAG Knowledge Systems',
+    'Software Architecture Consulting',
+    'Technical Leadership',
+    'Large-Scale Distributed Systems',
+  ],
+  priceRange: '€€€',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Customer Service',
+    email: 'miron4dev@gmail.com',
+  },
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Evgeny Mironenko" />
+    <meta property="og:locale" content="en_NL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@miron4dev" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Geo / Local -->
+    <meta name="geo.region" content="NL-NH" />
+    <meta name="geo.placename" content="Amsterdam" />
+
+    <!-- Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </head>
+  <body>
+    <slot />
+
+    <!-- Scroll-reveal script -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

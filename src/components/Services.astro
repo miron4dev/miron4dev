@@ -1,0 +1,168 @@
+---
+const services = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/><line x1="7" y1="19" x2="17" y2="19"/></svg>`,
+    title: "AI & Knowledge Systems",
+    description:
+      "I build AI systems that people actually use — from an LLM-powered triage tool that classifies thousands of requests automatically, to a GraphRAG knowledge base that helps hundreds of people across departments find answers in fragmented data. I work across the full stack: AI agents, infrastructure, data pipelines, and the interfaces people interact with daily.",
+    tags: ["GraphRAG", "Neo4j", "LLM Agents", "MCP"],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    title: "Backend & Frontend",
+    description:
+      "Full-stack delivery across the entire product. Robust backend services in Java, Kotlin, TypeScript and Go — built for scale, maintainability, and the kinds of load that come with millions of users. And modern React frontends that feel fast and are a pleasure to work with. I build things end to end without leaving loose ends.",
+    tags: [
+      "Java",
+      "Kotlin",
+      "Go",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "Node.js",
+    ],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    title: "Engineering Leadership",
+    description:
+      "Good engineering is more than writing code. I help teams build better habits — clearer processes, healthier on-call rotations, more effective hiring, and the kind of setup where engineers can focus on actual work. I have mentored engineers and know what it takes to keep complex cross-team projects on track.",
+    tags: [
+      "Team mentoring",
+      "On-call design",
+      "Hiring",
+      "Ways of working",
+      "Process improvement",
+    ],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    title: "Platform & Infrastructure",
+    description:
+      "Solid infrastructure is what makes shipping fast and safe. I've built CI/CD pipelines, observability, and internal platform tooling that allowed engineering teams to move independently. Mostly on AWS, always with a focus on reliability and making the developer experience as smooth as possible.",
+    tags: [
+      "AWS",
+      "Docker",
+      "GitHub Actions",
+      "Grafana",
+      "Prometheus",
+      "OpenTelemetry",
+      "Kubernetes",
+    ],
+  },
+];
+---
+
+<section id="services">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">// services</span>
+      <h2 class="section-title">What I can help with</h2>
+      <p class="section-subtitle">
+        I work hands-on — not just advisory. Here is where I tend to add the
+        most value.
+      </p>
+    </div>
+
+    <div class="services-grid stagger">
+      {
+        services.map(({ icon, title, description, tags }, i) => (
+          <article class="card service-card fade-up" style={`--i: ${i}`}>
+            <div class="service-icon" set:html={icon} />
+            <h3 class="service-title">{title}</h3>
+            <p class="service-desc">{description}</p>
+            <div class="service-tags">
+              {tags.map((t) => (
+                <span class="stag">{t}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  #services {
+    background: rgba(18, 18, 28, 0.5);
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--teal-dim);
+    border: 1px solid var(--teal-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    flex-shrink: 0;
+    transition:
+      background 0.3s,
+      box-shadow 0.3s;
+  }
+  .service-card:hover .service-icon {
+    background: rgba(0, 212, 200, 0.2);
+    box-shadow: 0 0 20px rgba(0, 212, 200, 0.2);
+  }
+
+  .service-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+  }
+  .service-desc {
+    font-size: 0.925rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    flex: 1;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+  .stag {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+  }
+  .service-card:hover .stag {
+    color: var(--teal);
+    border-color: var(--teal-border);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

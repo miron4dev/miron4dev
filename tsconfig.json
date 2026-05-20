@@ -1,34 +1,17 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "jsx": "react",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "strict": true,
-    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@common/*": [
-        "src/components/common/*"
-      ],
-      "@models/*": [
-        "src/models/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
-  "include": [
-    "./src/**/*",
-    "./gatsby-node.ts",
-    "./gatsby-config.ts",
-    "./plugins/**/*"
-  ]
+  "include": ["src"]
 }

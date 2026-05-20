@@ -1,0 +1,152 @@
+---
+const categories = [
+  {
+    label: 'Languages',
+    items: [
+      { name: 'Java',       color: '#f89820' },
+      { name: 'Kotlin',     color: '#7f52ff' },
+      { name: 'Go',         color: '#00acd7' },
+      { name: 'Python',     color: '#3776ab' },
+      { name: 'TypeScript', color: '#3178c6' },
+      { name: 'JavaScript', color: '#f7df1e' },
+      { name: 'SQL',        color: '#00d4c8' },
+    ],
+  },
+  {
+    label: 'Frameworks & Runtime',
+    items: [
+      { name: 'Spring Boot', color: '#6db33f' },
+      { name: 'Node.js',     color: '#339933' },
+      { name: 'React',       color: '#61dafb' },
+      { name: 'REST API',    color: '#00d4c8' },
+      { name: 'gRPC',        color: '#244c5a' },
+      { name: 'GraphQL',     color: '#e10098' },
+    ],
+  },
+  {
+    label: 'AI & Knowledge Graphs',
+    items: [
+      { name: 'GraphRAG',     color: '#00d4c8' },
+      { name: 'LangChain',    color: '#22d3ee' },
+      { name: 'Neo4j',        color: '#0085ff' },
+      { name: 'LLM Agents',   color: '#a855f7' },
+      { name: 'OpenAI API',   color: '#10a37f' },
+      { name: 'MCP Protocol', color: '#00d4c8' },
+    ],
+  },
+  {
+    label: 'Cloud & DevOps',
+    items: [
+      { name: 'AWS',            color: '#ff9900' },
+      { name: 'Docker',         color: '#2496ed' },
+      { name: 'Git',            color: '#f05033' },
+      { name: 'GitHub Actions', color: '#2088ff' },
+    ],
+  },
+  {
+    label: 'Observability',
+    items: [
+      { name: 'Grafana',         color: '#f46800' },
+      { name: 'Prometheus',      color: '#e6522c' },
+      { name: 'OpenTelemetry',   color: '#f5a800' },
+      { name: 'Sentry',          color: '#8b5cf6' },
+    ],
+  },
+];
+---
+<section id="techstack">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">// tech stack</span>
+      <h2 class="section-title">Tools of the trade</h2>
+    </div>
+
+    <div class="tech-categories stagger">
+      {categories.map(({ label, items }, i) => (
+        <div class="tech-row fade-up" style={`--i: ${i}`}>
+          <h3 class="cat-label mono">{label}</h3>
+          <div class="chips">
+            {items.map(({ name, color }) => (
+              <span class="chip">
+                <span class="chip-dot" style={`background:${color};box-shadow:0 0 6px ${color}55`} aria-hidden="true"></span>
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #techstack { background: rgba(18, 18, 28, 0.5); }
+  .section-header { margin-bottom: 3rem; }
+
+  .tech-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .tech-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cat-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.38rem 0.85rem 0.38rem 0.65rem;
+    border-radius: 7px;
+    transition: border-color 0.25s, background 0.25s, transform 0.2s;
+    cursor: default;
+    white-space: nowrap;
+  }
+  .chip:hover {
+    border-color: var(--border-h);
+    background: var(--bg-card-h);
+    transform: translateY(-2px);
+  }
+
+  .chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: box-shadow 0.25s;
+  }
+  .chip:hover .chip-dot { box-shadow: none !important; }
+
+  .tech-row:nth-child(3) .chip { border-color: rgba(0, 212, 200, 0.18); }
+  .tech-row:nth-child(3) .chip:hover { border-color: var(--teal-border); }
+
+  @media (max-width: 640px) {
+    .tech-row { grid-template-columns: 1fr; gap: 0.6rem; }
+  }
+</style>

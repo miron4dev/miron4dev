@@ -1,0 +1,191 @@
+/* ─── Google Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Mono:wght@400;500&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:           #0a0a0f;
+  --bg-card:      #12121c;
+  --bg-card-h:    #16162a;
+  --bg-nav:       rgba(10, 10, 15, 0.85);
+
+  /* Brand */
+  --teal:         #00d4c8;
+  --teal-dark:    #00a89f;
+  --teal-dim:     rgba(0, 212, 200, 0.12);
+  --teal-glow:    rgba(0, 212, 200, 0.35);
+  --teal-border:  rgba(0, 212, 200, 0.22);
+
+  /* Text */
+  --text:         #e8e8ef;
+  --text-muted:   #7878a0;
+  --text-faint:   #4a4a6a;
+
+  /* Borders */
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-h:     rgba(255, 255, 255, 0.14);
+
+  /* Spacing */
+  --section-py:   6rem;
+  --container:    1120px;
+  --radius:       12px;
+  --radius-sm:    8px;
+
+  /* Transitions */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  min-height: 100vh;
+  /* Dot-grid background pattern */
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(0, 212, 200, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 1px 1px, rgba(0, 212, 200, 0.10) 1px, transparent 0);
+  background-size: 100%, 36px 36px;
+  background-attachment: fixed;
+}
+
+/* Selection */
+::selection { background: var(--teal); color: #000; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--teal-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+
+/* ─── Typography ─────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5 { line-height: 1.2; font-weight: 700; color: var(--text); }
+a { color: var(--teal); text-decoration: none; transition: opacity 0.2s var(--ease); }
+a:hover { opacity: 0.85; }
+img { max-width: 100%; display: block; }
+p { color: var(--text-muted); }
+code, .mono { font-family: 'Fira Mono', monospace; }
+
+/* ─── Layout ─────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: var(--section-py) 0;
+  position: relative;
+}
+
+.section-label {
+  font-family: 'Fira Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card:hover {
+  border-color: var(--teal-border);
+  background: var(--bg-card-h);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 212, 200, 0.12);
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #000;
+  box-shadow: 0 4px 20px var(--teal-glow);
+}
+.btn-primary:hover {
+  background: var(--teal-dark);
+  box-shadow: 0 6px 28px var(--teal-glow);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal-border);
+}
+.btn-outline:hover {
+  background: var(--teal-dim);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* ─── Divider ─────────────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal-border), transparent);
+  margin: 0;
+}
+
+/* ─── Scroll animations ───────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.stagger > * { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 4rem;
+  }
+}
